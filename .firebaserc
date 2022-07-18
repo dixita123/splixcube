@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angulartodo-a6b6f": {
+      "hosting": {
+        "auth-todo": [
+          "angulartodo-a6b6f"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "angulartodo-a6b6f"
+  }
+}

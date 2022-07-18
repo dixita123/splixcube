@@ -1,0 +1,51 @@
+<div class="header">
+    <h2>Todo Apllication</h2>
+</div>
+<div class="container-fluid" #body>
+    <div class="row mt-5">
+        <div class="col"></div>
+        <div class="col-4">
+            <div class="card shadow">
+                <div class="card-body">
+                    <form [formGroup]="signUpForm" (ngSubmit)="register()">
+                        <div class="mb-3">
+                            <h2 class="text-dark text-muted">Sign In</h2>
+                        </div>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label><br>
+                            <input type="email" class="form-control" name="email" formControlName="name" >
+                            <p *ngIf="signUpForm.controls['name'].errors?.['required'] && signUpForm.controls['name'].touched">Name is required.</p>
+                          </div>
+                        <div class="mb-3">
+                          <label for="email" class="form-label">Email</label>
+                          <input type="email" class="form-control" name="email" formControlName="email" >
+                          <p *ngIf="signUpForm.controls['email'].errors?.['required'] && signUpForm.controls['email'].touched">Email is required.</p>
+                        </div>
+                        <div class="mb-3">
+                          <label for="password" class="form-label">Password</label>
+                          <input type="password" class="form-control" name="password" formControlName="password" >
+                          <p *ngIf="signUpForm.controls['password'].errors?.['password'] && signUpForm.controls['password'].touched">Password is required.</p>
+                          <p *ngIf="signUpForm.controls['password'].errors?.['minlength'] && signUpForm.controls['password'].touched">Minimum 6 charactors needed.</p>
+                  <p *ngIf="signUpForm.controls['password'].errors?.['maxlength'] && signUpForm.controls['password'].touched">Maximum 10 charactors needed.</p>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Confirm Password</label>
+                            <input type="password" class="form-control" name="confirmPassword" formControlName="confirmPassword" >
+                            <p *ngIf="signUpForm.controls['confirmPassword'].errors?.['required'] && signUpForm.controls['confirmPassword'].touched">Confirm your password.</p>
+                            <p *ngIf="signUpForm.errors?.['passwordsDontMatch'] && signUpForm.controls['confirmPassword'].touched">
+                                Passwords should match
+                            </p>
+                        </div>
+                        <button type="submit" class="btn btn-info" [disabled]="!signUpForm.valid">Register</button>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <a href="/login" style="text-decoration: none;">Have an account ? <span class="text-danger">Login</span></a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>

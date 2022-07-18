@@ -1,0 +1,50 @@
+<div class="header">
+    <h2>Todo Apllication</h2>
+</div>
+<div class="container-fluid">
+    <div class="row mt-5">
+        <div class="col"></div>
+        <div class="col-4">
+            <div class="card shadow">
+                <div class="card-body">
+                    <form [formGroup]="loginForm" (ngSubmit)="login()">
+                        <div class="mb-3">
+                            <h2 class="text-dark text-muted">Login</h2>
+                        </div>
+                        <div class="mb-3">
+                          <label for="email" class="form-label">Email</label>
+                          <input type="email" class="form-control" name="email" formControlName="email">
+                          <p *ngIf="loginForm.controls['email'].errors?.['required'] && loginForm.controls['email'].touched">Email is required.</p>
+                        </div>
+                        <div class="mb-3">
+                          <label for="password" class="form-label">Password</label>
+                          <input type="password" class="form-control" name="password" formControlName="password">
+                          <p *ngIf="loginForm.controls['password'].errors?.['required'] && loginForm.controls['password'].touched">Password is required.</p>
+                          <p *ngIf="loginForm.controls['password'].errors?.['minlength'] && loginForm.controls['password'].touched">Minimum 6 charactors needed.</p>
+                  <p *ngIf="loginForm.controls['password'].errors?.['maxlength'] && loginForm.controls['password'].touched">Maximum 10 charactors needed.</p>
+                        </div>
+                        <button type="submit" class="btn btn-info" [disabled]="!loginForm.valid">Login</button>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <a href="/register" style="text-decoration: none;">Need Account ? <span class="text-danger">Register</span></a>
+                            </div>
+                            <div class="col-md-6">
+                                <a href="/forgot-password" class="text-dark" style="text-decoration: none;"> Forgot Password ? </a>
+                            </div>
+                        </div>
+                        <div class="row mt-2 goggle" >
+                            <a (click)="signInWithGoogle()" style="text-decoration: none;cursor: pointer;">
+                                <div class="shadow text-center">
+                                    <div class="card-body">
+                                        <img src="../../../assets/index.png" alt="" height="30px" width="30px"> Sign In with Google
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col"></div>
+    </div>
+    </div>

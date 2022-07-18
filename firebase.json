@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/auth-todo",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

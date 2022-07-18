@@ -1,0 +1,57 @@
+
+  .container{
+    width: 80%;
+    margin-left:10%;
+    margin-top: 5%;
+  }
+  ul{
+    list-style-type: none;
+   
+  }
+  ul li{
+    
+    border:1px solid black;
+    padding: 20px;
+    border-radius: 5px;
+    font-size: larger;
+  }
+  svg{
+    color: black;
+    float: right;
+    width: 20px;
+    height: 20px;
+  }
+
+  .update{
+    background:black;
+    color: white;
+    padding: 10px;
+    margin-top:100px;
+    margin: 15px;
+    border:none;
+    outline: none;
+    border-radius: 5px;
+  }
+
+  .delete{
+    background:red;
+    color: white;
+    padding: 10px;
+    margin-top:100px;
+    margin: 15px;
+    border:none;
+    outline: none;
+    border-radius: 5px;
+  }
+  input[type=text]{
+    border: none;
+    outline: none;
+    border-bottom: 2px solid rgb(227, 227, 227);
+    width: 100%;
+
+    font-size: large;
+    color: gray;
+    margin-top: 15px ;
+    margin-bottom: 15px ;
+  }
+
